@@ -25,3 +25,15 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## APP is dockerized
+
+how to build:
+
+`docker build -t IMAGE_NAME:TAG .`
+
+how to run:
+
+`docker run -d -e PORT='3000' -e APIHOST='http://192.168.0.1:3000' -p 3000:3000 IMAGE_NAME:TAG`
+
+port nad apihost are env vars and can be set to any suitable value for tests purpose.
