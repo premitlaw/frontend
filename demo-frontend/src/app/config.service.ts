@@ -19,7 +19,7 @@ export class ConfigService {
           self.config.next(JSON.parse(xhr.responseText));
           resolve();
         } else {
-                    reject({msg:"No config found"});
+              resolve({msg:"No config found"});
         }
       };
       xhr.send();
