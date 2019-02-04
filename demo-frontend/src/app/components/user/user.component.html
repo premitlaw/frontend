@@ -1,25 +1,57 @@
+<div class="header mt-3">
+  <div class="container m-auto d-flex justify-content-center">
+    <h1>User Menagment</h1>
+  </div>
+</div>
+
 <div class="container mt-5 mb-3">
   <form (ngSubmit)="onSubmit()">
-    <input class="form-control" type="text" name="Name" [(ngModel)]="name" /> 
-    <input class="form-control"  type="text" name="Code" [(ngModel)]="code" /> 
-    <button class="button btn-success" type="submit" >Add user</button>
+    <div class="form-group">
+      <div class="row mb-1">
+        <div class="column col-2 d-flex justify-content-end">
+          <label for="userName">User name</label>
+        </div>
+        <div class="column col-3">
+          <input id="userName" class="form-control" placeholder="Name" type="text" name="Name" [(ngModel)]="name" />
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="column col-2 d-flex justify-content-end">
+          <label for="userCode">Code</label>
+        </div>
+        <div class="column col-3">
+          <input id="userCode" class="form-control" placeholder="Code" type="text" name="Code" [(ngModel)]="code" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="column col-5 offset-2 d-flex justify-content-begin">
+          <button class="button btn-success px-5 py-1" type="submit">Add user</button>
+        </div>
+      </div>
+
+    </div>
   </form>
 </div>
 
 <div class="container">
-  <table class="table">
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Code</th>
-      <th></th>
-    </tr>
-    <tr *ngFor="let user of (users$ | async)">
-      <td>{{user.customer_id}}</td>
-      <td>{{user.customer_name}}</td>      
-      <td>{{user.customer_code}}</td>
-      <td><button class="button btn-danger" (click)=onUserDelete(user)>X</button></td>
-    </tr>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Code</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of (users$ | async)">
+        <td>{{user.customer_id}}</td>
+        <td>{{user.customer_name}}</td>
+        <td>{{user.customer_code}}</td>
+        <td><button class="button close" (click)=onUserDelete(user)>X</button></td>
+      </tr>
+    </tbody>
+
   </table>
 
 </div>

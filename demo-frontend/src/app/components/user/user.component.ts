@@ -27,8 +27,12 @@ export class UserComponent implements OnInit {
   }
 
   onSubmit(){
-    this.userService.addUser(this.name, this.code)
-    this.users$ = this.userService.getUsers()
+    if (this.name){
+      this.userService.addUser(this.name, this.code)
+      this.name="", 
+      this.code=""
+      this.users$ = this.userService.getUsers()
+    }
   }
 
 }

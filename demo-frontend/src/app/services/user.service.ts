@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { User } from 'src/app/models/user';
 import { Observable } from 'rxjs/internal/Observable';
 import { defer } from 'rxjs';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
