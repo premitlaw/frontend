@@ -10,7 +10,7 @@
           <label for="userName">User name</label>
         </div>
         <div class="column col-3">
-          <input id="userName" class="form-control" placeholder="Name" type="text" name="Name" [(ngModel)]="user.customer_name" />
+          <input id="userName" class="form-control" placeholder="Name" type="text" name="Name" [(ngModel)]="user.name" />
         </div>
       </div>
       <div class="row mb-2">
@@ -18,7 +18,7 @@
           <label for="userCode">Code</label>
         </div>
         <div class="column col-3">
-          <input id="userCode" class="form-control" placeholder="Code" type="text" name="Code" [(ngModel)]="user.customer_code" />
+          <input id="userCode" class="form-control" placeholder="Code" type="text" name="Code" [(ngModel)]="user.code" />
         </div>
       </div>
       <div class="row">
@@ -41,10 +41,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of (users$ | async)">
-        <td style="width: 10%">{{user.customer_id}}</td> 
-        <td style="width: 40%">{{user.customer_name}}</td>
-        <td style="width: 40%">{{user.customer_code}}</td>
+      <tr *ngFor="let user of (users$ | async) trackBy:trackByFn">
+        <td style="width: 10%">{{user.id}}</td> 
+        <td style="width: 40%">{{user.name}}</td>
+        <td style="width: 40%">{{user.code}}</td>
         <td style="width: 10%"><button class="button close delete-button" (click)=onUserDelete(user)>X</button></td>
       </tr>
     </tbody>

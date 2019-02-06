@@ -1,8 +1,8 @@
 
 export class User {
-    public customer_id: number;
-    public customer_name: string;
-    public customer_code: string
+    public id: number;
+    public name: string;
+    public code: string
     constructor() {
     }
 }

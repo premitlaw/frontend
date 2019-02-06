@@ -21,15 +21,19 @@ export class UserComponent implements OnInit {
   }
 
   onUserDelete(user :User){
-    this.userService.deleteUser(user).subscribe();
-    this.users$ = this.userService.getUsers()
+    this.userService.deleteUser(user)
+    .subscribe(()=>this.users$ = this.userService.getUsers());
   }
 
   onSubmit(){
-    if (this.user.customer_name){
-      this.userService.addUser(this.user).subscribe();
-      this.users$ = this.userService.getUsers()
+    if (this.user.name){
+      this.userService.addUser(this.user)
+        .subscribe(()=>this.users$ = this.userService.getUsers());
     }
+  }
+
+  trackByFn(index, item : User){
+    return item.id;
   }
 
 }

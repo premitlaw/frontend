@@ -7,13 +7,14 @@ import { ConfigService } from './config.service';
 export class BaseService {
 
   protected baseUrl;
-  private options = {withCredentials: true, Accept: 'application/json', 'Content-Type': 'application/json'};
+  private options = {withCredentials: false, Accept: 'application/json', 'Content-Type': 'application/json'};
 
   constructor(protected http: HttpClient,protected configSrv: ConfigService) {
     configSrv.config.subscribe((conf: any) => {
       this.baseUrl = `${conf.apiHost}/demo/customer/`;
     });
-    this.baseUrl = "https://capgeminidemo.herokuapp.com/demo/customer/"
+    //set APIHOST = http://10.42.80.136:8080
+    //this.baseUrl = "http://10.42.80.136:8080/demo/customer/"
   }
 
   getTemplate(urlSuffix): Observable<any> {

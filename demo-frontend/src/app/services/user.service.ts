@@ -19,7 +19,7 @@ export class UserService extends BaseService {
   }
 
   deleteUser(user : User) : Observable<User>{
-      return this.deleteTemplate(user.customer_id);
+      return this.deleteTemplate(user.id);
   }
 
   addUser(user : User) : Observable<User> {
