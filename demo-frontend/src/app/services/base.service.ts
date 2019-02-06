@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
-import {ConfigService} from './config.service';
+import { ConfigService } from './config.service';
 
 @Injectable()
 export class BaseService {
@@ -9,10 +9,11 @@ export class BaseService {
   protected baseUrl;
   private options = {withCredentials: true, Accept: 'application/json', 'Content-Type': 'application/json'};
 
-  constructor(protected http: HttpClient,private configSrv: ConfigService) {
+  constructor(protected http: HttpClient,protected configSrv: ConfigService) {
     configSrv.config.subscribe((conf: any) => {
-      this.baseUrl = `${conf.apiHost}/demo/gateway/`;
+      this.baseUrl = `${conf.apiHost}/demo/customer/`;
     });
+    this.baseUrl = "https://capgeminidemo.herokuapp.com/demo/customer/"
   }
 
   getTemplate(urlSuffix): Observable<any> {

@@ -12,8 +12,7 @@ import { User } from '../../models/user';
 export class UserComponent implements OnInit {
 
   users$ : Observable<User[]>
-  name : string
-  code : string
+  user = new User();
 
   constructor(public userService : UserService) { }
 
@@ -22,15 +21,13 @@ export class UserComponent implements OnInit {
   }
 
   onUserDelete(user :User){
-    this.userService.deleteUser(user);
+    this.userService.deleteUser(user).subscribe();
     this.users$ = this.userService.getUsers()
   }
 
   onSubmit(){
-    if (this.name){
-      this.userService.addUser(this.name, this.code)
-      this.name="", 
-      this.code=""
+    if (this.user.customer_name){
+      this.userService.addUser(this.user).subscribe();
       this.users$ = this.userService.getUsers()
     }
   }
