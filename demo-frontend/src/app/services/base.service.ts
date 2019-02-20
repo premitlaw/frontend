@@ -11,10 +11,8 @@ export class BaseService {
 
   constructor(protected http: HttpClient,protected configSrv: ConfigService) {
     configSrv.config.subscribe((conf: any) => {
-      this.baseUrl = `${conf.apiHost}/demo/customer/`;
+      this.baseUrl = `${conf.apiHost}/demo/gateway/customer/`;
     });
-    //set APIHOST = http://10.42.80.136:8080
-    //this.baseUrl = "http://10.42.80.136:8080/demo/customer/"
   }
 
   getTemplate(urlSuffix): Observable<any> {
