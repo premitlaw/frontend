@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "no.difa.eik.common.EIKLogMessage.Eik01201",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "messageId": {
+            "type": "string"
+        
+        },
+        "message": {
+            "type": "string"
+            
+        },
+        "messageContext": {
+            "$ref": "#/definitions/EikOperationAccess",
+            "description": "Contains security information that is logged f.ex when access is denied for a client application (clientId) to make request on behalf of a pharmacy (guid)."
+        }
+    },
+    "required": [
+        "messageId", "message", "messageContext"
+    ],
+    "definitions": {
+        "EikOperationAccess": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "status": {
+                    "description": "Identifier for a client application used by a pharmacy organization.",
+                    "type": "number"
+                }
+                
+            }
+            
+        }
+    }
+}
