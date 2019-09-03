@@ -1,8 +1,7 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "http://json-schema.org/draft-04/schema#",
     "$id": "no.difa.eik.common.EIKLogMessage.Eik01201",
     "type": "object",
-    "additionalProperties": false,
     "properties": {
         "messageId": {
             "type": "string"
@@ -23,7 +22,6 @@
     "definitions": {
         "EikOperationAccess": {
             "type": "object",
-            "additionalProperties": false,
             "properties": {
                 "status": {
                     "description": "Identifier for a client application used by a pharmacy organization.",
