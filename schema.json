@@ -18,7 +18,7 @@
         },
         
          "@timestamp": {
-            "type": ["object","string"]
+            "type": ["object","string","any"]
             
         },
         
@@ -26,10 +26,7 @@
             "type": "string"
             
         },
-         "thread_name": {
-            "type": "string"
-            
-        },
+         
         "messageContext": {
             "$ref": "#/definitions/EikOperationAccess",
             "description": "Contains security information that is logged f.ex when access is denied for a client application (clientId) to make request on behalf of a pharmacy (guid)."
