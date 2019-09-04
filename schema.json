@@ -33,7 +33,7 @@
         }
     },
     "required": [
-        "messageId", "message", "messageContext","level","@timestamp","logger_name","thread_name"
+        "messageId", "message", "messageContext","level","@timestamp","logger_name"
     ],
     "definitions": {
         "EikOperationAccess": {
