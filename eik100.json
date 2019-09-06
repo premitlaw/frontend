@@ -11,6 +11,10 @@
             "type": "string"
             
         },
+         "timestamp": {
+            "type": "string"
+            
+        },
         
          "logger_name": {
             "type": "string"
@@ -29,7 +33,7 @@
         }
     },
     "required": [
-        "messageId", "message", "messageContext","level","logger_name"
+        "messageId", "message", "messageContext","level","logger_name","timestamp"
     ],
     "definitions": {
         "EikOperationAccess": {
